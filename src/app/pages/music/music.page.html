@@ -1,0 +1,12 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>listing {{ directory }}</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content *ngIf="files">
+    <ion-item type="full" *ngFor="let f of files;" routerLink="/music/{{ directory }}/{{ f.hash }}">
+        <ion-icon slot="start" name="musical-note-outline"></ion-icon>
+        <ion-label>{{ f.name }}</ion-label>
+    </ion-item>
+</ion-content>
