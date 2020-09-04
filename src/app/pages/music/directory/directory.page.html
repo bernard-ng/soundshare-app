@@ -1,0 +1,15 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/music/directories"></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{ directory }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content *ngIf="files">
+  <ion-item type="full" *ngFor="let f of files;" routerLink="/music/directories/{{ directory }}/{{ f.hash }}">
+    <ion-icon slot="start" name="musical-note-outline"></ion-icon>
+    <ion-label>{{ f.name }}</ion-label>
+  </ion-item>
+</ion-content>

@@ -1,21 +1,15 @@
 <ion-app>
-    <ion-split-pane contentId="main-content">
-        <ion-menu contentId="main-content" type="overlay">
-            <ion-content>
-                <ion-list id="inbox-list">
-                    <ion-list-header>SoundShare</ion-list-header>
-                    <ion-note>Life is a music video</ion-note>
-
-                    <ion-menu-toggle auto-hide="false" *ngFor="let f of folders;">
-                        <ion-item (onclick)="handleSelect(f.name)" routerLink="/music/{{ f.name }}" lines="none" detail="false">
-                            <ion-icon slot="start" name="folder-open-outline"></ion-icon>
-                            <ion-label>{{ f.name }}</ion-label>
-                        </ion-item>
-                    </ion-menu-toggle>
-                    <ion-button (onclick)="handleRefresh()" expand="block" color="primary">refresh folders</ion-button>
-                </ion-list>
-            </ion-content>
-        </ion-menu>
-        <ion-router-outlet id="main-content"></ion-router-outlet>
-    </ion-split-pane>
+  <ion-router-outlet id="main-content"></ion-router-outlet>
+  <ion-tabs>
+    <ion-tab-bar slot="bottom">
+      <ion-tab-button tab="music/directories">
+        <ion-icon name="folder-open-outline"></ion-icon>
+        <ion-label>Folders</ion-label>
+      </ion-tab-button>
+      <ion-tab-button tab="about">
+        <ion-icon name="information-circle"></ion-icon>
+        <ion-label>About</ion-label>
+      </ion-tab-button>
+    </ion-tab-bar>
+  </ion-tabs>
 </ion-app>

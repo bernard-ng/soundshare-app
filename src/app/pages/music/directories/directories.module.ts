@@ -4,14 +4,17 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { MusicPageRoutingModule } from './music-routing.module';
+import { DirectoriesPageRoutingModule } from './directories-routing.module';
+
+import { DirectoriesPage } from './directories.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    MusicPageRoutingModule
+    DirectoriesPageRoutingModule
   ],
+  declarations: [DirectoriesPage]
 })
-export class MusicPageModule {}
+export class DirectoriesPageModule {}
