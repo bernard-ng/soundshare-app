@@ -7,20 +7,20 @@
 <ion-content>
   <ion-grid>
     <ion-row>
-      <ion-button (click)="handleRefresh()" expand="block" color="primary">Refresh Folders</ion-button>
+      <ion-col size="12">
+        <ion-button (click)="handleRefresh()" expand="block">refresh content</ion-button>
+      </ion-col>
     </ion-row>
-
     <ion-row>
-      <ion-col sizeXs="6" sizeSm="4" sizeLg="3" sizeXl="3" *ngFor="let f of folders;">
-        <ion-card
+      <ion-col sizeXs="6" sizeLg="3" sizeMd="4" sizeXl="3" *ngFor="let f of folders;">
+        <app-folder-card
+          name="{{ f.name }}"
+          count="{{ f.children.length }}"
+          icon="folder-open-outline"
           (click)="handleSelect(f.name)"
           routerLink="/music/{{ f.name }}"
         >
-          <ion-card-content>
-            <ion-icon slot="start" name="folder-open-outline"></ion-icon>
-            <ion-label>{{ f.name }}</ion-label>
-          </ion-card-content>
-        </ion-card>
+        </app-folder-card>
       </ion-col>
     </ion-row>
   </ion-grid>

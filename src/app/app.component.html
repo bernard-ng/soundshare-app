@@ -1,7 +1,9 @@
 <ion-app>
-  <ion-router-outlet id="main-content"></ion-router-outlet>
+  <ion-content>
+    <ion-router-outlet id="main-content"></ion-router-outlet>
+  </ion-content>
   <ion-tabs>
-    <ion-tab-bar slot="bottom">
+    <ion-tab-bar slot="bottom" [translucent]="true">
       <ion-tab-button tab="music/directories">
         <ion-icon name="folder-open-outline"></ion-icon>
         <ion-label>Folders</ion-label>

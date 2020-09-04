@@ -1,12 +1,13 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
+import {FormsModule} from '@angular/forms';
 
-import { IonicModule } from '@ionic/angular';
+import {IonicModule} from '@ionic/angular';
 
-import { DirectoriesPageRoutingModule } from './directories-routing.module';
+import {DirectoriesPageRoutingModule} from './directories-routing.module';
 
-import { DirectoriesPage } from './directories.page';
+import {DirectoriesPage} from './directories.page';
+import {FolderCardComponent} from '../../../components/cards/folder-card/folder-card.component';
 
 @NgModule({
   imports: [
@@ -15,6 +16,10 @@ import { DirectoriesPage } from './directories.page';
     IonicModule,
     DirectoriesPageRoutingModule
   ],
-  declarations: [DirectoriesPage]
+  declarations: [
+    FolderCardComponent,
+    DirectoriesPage
+  ]
 })
-export class DirectoriesPageModule {}
+export class DirectoriesPageModule {
+}
