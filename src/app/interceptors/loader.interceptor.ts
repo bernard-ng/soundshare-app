@@ -25,7 +25,7 @@ export class LoaderInterceptor implements HttpInterceptor {
 
     return next.handle(req).pipe(
       catchError(error => {
-        this.showRequestFailedAlert().then(() => console.log({error}));
+        this.showRequestFailedAlert(error.message).then(() => console.log({error}));
         return EMPTY;
       }),
       finalize(async () => {
@@ -37,10 +37,10 @@ export class LoaderInterceptor implements HttpInterceptor {
     );
   }
 
-  async showRequestFailedAlert() {
+  async showRequestFailedAlert(message: string|null = null) {
     const alert = await this.alertController.create({
       header: 'Oops, an error occurs',
-      message: 'Unable to communicate with the server, please try again later.',
+      message: message ?? 'Unable to communicate with the server, please try again later.',
       buttons: ['OK'],
       translucent: true,
       backdropDismiss: true
